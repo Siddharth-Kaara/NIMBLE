@@ -19,7 +19,7 @@ for v in versions:
     price = stripe.Price.create(
         unit_amount=v["amount"],
         currency="usd",
-        recurring={"interval": "month"},
+        recurring={"interval": "day", "interval_count": 30},
         product=v["stripe_id"]
     )
     print(f"Created Price for {v['version']}: {price.id}")

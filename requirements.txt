@@ -1,0 +1,15 @@
+# Core dependencies
+Flask==3.1.0
+flask_cors==5.0.1
+python-dotenv==1.0.1
+Requests==2.32.3
+stripe==11.5.0
+
+# Server deployment
+gunicorn>=20.1.0
+
+# Email handling
+secure-smtplib==0.1.1
+
+# For async operations (used in server.py)
+asgiref==3.8.1

@@ -1,0 +1,16 @@
+# Environment variables
+.env
+
+# Sensitive files
+Tokens.txt
+
+# Python compiled files
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# IDE files (if any)
+.vscode/
+*.idea/

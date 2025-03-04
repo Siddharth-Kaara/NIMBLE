@@ -10,7 +10,7 @@ async function getExistingUser(userEmail, env) {
   
   try {
     const response = await fetch(
-      `https://api.cryptlex.com/v3/users?email=${encodeURIComponent(userEmail)}`,
+      `https://api.eu.cryptlex.com/v3/users?email=${encodeURIComponent(userEmail)}`,
       {
         headers: {
           "Authorization": `Bearer ${env.CRYPTLEX_TOKEN}`,
@@ -68,7 +68,7 @@ async function createUser(userEmail, firstName, lastName, orgId, env) {
   });
 
   const response = await fetch(
-    "https://api.cryptlex.com/v3/users",
+    "https://api.eu.cryptlex.com/v3/users",
     {
       method: "POST",
       headers: {
@@ -103,7 +103,7 @@ async function getExistingOrganization(orgEmail, env) {
   
   try {
     const response = await fetch(
-      `https://api.cryptlex.com/v3/organizations?email=${encodeURIComponent(orgEmail)}`,
+      `https://api.eu.cryptlex.com/v3/organizations?email=${encodeURIComponent(orgEmail)}`,
       {
         headers: {
           "Authorization": `Bearer ${env.CRYPTLEX_TOKEN}`,
@@ -150,7 +150,7 @@ async function createOrganization(orgEmail, env) {
   });
 
   const response = await fetch(
-    "https://api.cryptlex.com/v3/organizations",
+    "https://api.eu.cryptlex.com/v3/organizations",
     {
       method: "POST",
       headers: {
@@ -189,7 +189,7 @@ async function createLicense(userId, productId, productVersionId, organization, 
   });
 
   const response = await fetch(
-    "https://api.cryptlex.com/v3/licenses",
+    "https://api.eu.cryptlex.com/v3/licenses",
     {
       method: "POST",
       headers: {
@@ -327,7 +327,7 @@ async function renewLicense(licenseId, env) {
   console.log('Request headers:', headers);
 
   const response = await fetch(
-    `https://api.cryptlex.com/v3/licenses/${licenseId}/renew`,
+    `https://api.eu.cryptlex.com/v3/licenses/${licenseId}/renew`,
     {
       method: "POST",
       headers: headers,
@@ -351,7 +351,7 @@ async function extendLicense(licenseId, extensionLength, env) {
   console.log(`Extending license ${licenseId} by ${extensionLength} days`);
   const headers = { "Authorization": `Bearer ${env.CRYPTLEX_TOKEN}`, "Content-Type": "application/json" };
   const response = await fetch(
-    `https://api.cryptlex.com/v3/licenses/${licenseId}/extend`,
+    `https://api.eu.cryptlex.com/v3/licenses/${licenseId}/extend`,
     {
       method: "POST",
       headers,
@@ -467,7 +467,7 @@ async function handleRenewal(event, env) {
 
   // Fetch license details to check expiry
   const licenseResponse = await fetch(
-    `https://api.cryptlex.com/v3/licenses/${licenseId}`,
+    `https://api.eu.cryptlex.com/v3/licenses/${licenseId}`,
     { headers: { "Authorization": `Bearer ${env.CRYPTLEX_TOKEN}`, "Content-Type": "application/json" } }
   );
   if (!licenseResponse.ok) {

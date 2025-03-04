@@ -36,7 +36,7 @@ except Exception as e:
 
 # Email configuration
 EMAIL_CONFIG = {
-    'recipient_email': 'siddharth.g@kaaratech.com', #nimble.viom
+    'recipient_email': 'nimble@viom.tech', 
     'smtp': {
         'host': 'smtp.gmail.com',
         'port': 587,

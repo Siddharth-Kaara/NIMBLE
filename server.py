@@ -44,7 +44,7 @@ def after_request(response):
     response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
     return response
 
-app.debug = True
+app.debug = False
 
 # API keys and configuration
 stripe.api_key = os.getenv('STRIPE_SECRET_KEY')

@@ -269,5 +269,7 @@ if __name__ == "__main__":
         if not os.getenv(var):
             log_info(f"Optional variable {var} not set: {description}")
     
-    log_info("Starting server on port 4242...")
-    app.run(port=4242, debug=True)
+    # Get port from environment or default to 4242 for local dev
+    port = int(os.getenv("PORT", 4242))
+    log_info(f"Starting server on 0.0.0.0:{port}...")
+    app.run(host="0.0.0.0", port=port, debug=True)
